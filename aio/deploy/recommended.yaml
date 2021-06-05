@@ -242,8 +242,8 @@ metadata:
   namespace: kubernetes-dashboard
 spec:
   ports:
-    - port: 8000
-      targetPort: 8000
+    - port: 8080
+      targetPort: 8080
   selector:
     k8s-app: dashboard-metrics-scraper
 
@@ -273,7 +273,7 @@ spec:
         - name: dashboard-metrics-scraper
           image: kubernetesui/metrics-scraper:v1.0.6
           ports:
-            - containerPort: 8000
+            - containerPort: 8080
               protocol: TCP
           livenessProbe:
             httpGet:
